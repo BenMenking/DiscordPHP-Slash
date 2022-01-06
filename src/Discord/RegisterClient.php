@@ -205,7 +205,7 @@ class RegisterClient
             $endpoint .= "/guilds/{$command->guild_id}";
         }
 
-        $this->request('DELETE', "{$endpoint}/commands/{$command->id}");
+        return $this->request('DELETE', "{$endpoint}/commands/{$command->id}");
     }
 
     /**
