@@ -333,7 +333,7 @@ class Interaction extends Part
      */
     private function member()
     {
-        return $this->guild->members->get('id', $this->attributes['member']['user']['id']);
+        return $this->guild->members->get('id', $this->attributes['member']['user']['id']) ?? null;
     }
 
     /**
