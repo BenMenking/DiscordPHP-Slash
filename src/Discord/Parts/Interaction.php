@@ -323,7 +323,12 @@ class Interaction extends Part
      */
     private function channel()
     {
-        return $this->guild->channels->get('id', $this->channel_id);
+        if( isset($this->guild->channels) ) {
+            return $this->guild->channels->get('id', $this->channel_id);
+        }
+        else {
+            return null;
+        }
     }
 
     /**
@@ -333,7 +338,12 @@ class Interaction extends Part
      */
     private function member()
     {
-        return $this->guild->members->get('id', $this->attributes['member']['user']['id']) ?? null;
+        if( isset($this->guild->members) ) {
+            return $this->guild->members->get('id', $this->attributes['member']['user']['id']);
+        }
+        else {
+            return null;
+        }
     }
 
     /**
