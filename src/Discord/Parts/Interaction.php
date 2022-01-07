@@ -338,6 +338,8 @@ class Interaction extends Part
      */
     private function member()
     {
+        var_dump($this->guild);
+        
         if( isset($this->guild->members) ) {
             return $this->guild->members->get('id', $this->attributes['member']['user']['id']);
         }
